@@ -33,7 +33,7 @@ How to publish:
 - Click the button with three little dots (...) on the right side.
 - Select `Create deployment` from the menu.
 
-![vercel deployment](images/tutorial/vercel-deployment.png)
+![vercel deployment](images/tutorial/vercel-deployments.png)
 
 Wait for the Green Light: You will see a status bar that says "Building." Once it turns green and says "Ready," your changes are officially live on the website! You can double check on [https://plants.foodforestcollective.org/](https://plants.foodforestcollective.org)
 
