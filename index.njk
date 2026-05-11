@@ -23,7 +23,7 @@ title: Plant Catalog - CFFC
      {% if plant.layer == layer %}
     <div class="plant-card" data-name="{{ plant.name | lower }}" data-tags="{{ plant.tags | join(',') if plant.tags else '' }}">
       <a href="/{{ plant.slug }}/">
-          <img src="/images/plants/{{ plant.name }}.jpg" alt="{{ plant.name }}">
+          <img src="/images/plants/{{ plant.name }}.jpg" alt="{{ plant.name }}" onerror="this.onerror=null; this.replaceWith(Object.assign(document.createElement('div'), {className:'placeholder-image', textContent:'🌱'}))">
         <h3>{{ plant.name }}</h3>
       </a>
     </div>
