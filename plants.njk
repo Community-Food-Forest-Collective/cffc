@@ -18,11 +18,13 @@ permalink: "/{{ plant.slug }}/"
   <h1>{{ plant.name }}</h1>
   <p class="scientific-name"><em>{{ plant.scientificName }}</em></p>
   
-  {% set imagePath = "/images/plants/" + plant.name + ".jpg" %}
-  <img src="{{ imagePath }}"
-       alt="{{ plant.name }}"
-       title="{{ plant.name }}"
-       onerror="this.onerror=null; this.replaceWith(Object.assign(document.createElement('div'), {className:'placeholder-image', textContent:'🌱'}))" />
+  {% if plant.hasImage %}
+    <img src="/images/plants/{{ plant.name }}.jpg"
+         alt="{{ plant.name }}"
+         title="{{ plant.name }}" />
+  {% else %}
+    <div class="placeholder-image" role="img" aria-label="{{ plant.name }}">🌱</div>
+  {% endif %}
 
   <div class="plant-detail-container">
     <!-- Left Column: Botanical Information -->

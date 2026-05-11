@@ -1,10 +1,13 @@
 require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 // Using Node.js built-in fetch (available in Node 18+)
 
 module.exports = async function() {
   const baseId = process.env.AIRTABLE_BASE_ID;
   const tableName = process.env.PLANT_SPECIES_TABLE;
   const apiKey = process.env.AIRTABLE_API_KEY;
+  const imagesDir = path.join(__dirname, '..', 'images', 'plants');
   
   const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
 
@@ -28,6 +31,7 @@ module.exports = async function() {
       id: record.id,
       slug: slugify(record.fields['Name'] || 'unnamed-plant'),
       name: record.fields['Name'],
+      hasImage: record.fields['Name'] ? fs.existsSync(path.join(imagesDir, `${record.fields['Name']}.jpg`)) : false,
       scientificName: record.fields['Scientific Name'],
       overview: record.fields.Overview,
       appearance: record.fields.Appearance,
