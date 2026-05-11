@@ -4,7 +4,7 @@ pagination:
   data: plants
   size: 1
   alias: plant
-permalink: "/plants/{{ plant.slug }}/"
+permalink: "/{{ plant.slug }}/"
 ---
 
 <article class="plant-detail">
@@ -168,7 +168,7 @@ function createSearchInterface() {
     
     searchResults.innerHTML = matches.map(plant => `
       <div class="search-result-item">
-        <a href="/plants/${plant.slug}/">
+        <a href="/${plant.slug}/">
           <h4>${plant.name}</h4>
           <p>${plant.overview ? plant.overview.substring(0, 100) + '...' : 'No description available'}</p>
         </a>

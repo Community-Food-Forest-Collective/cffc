@@ -22,7 +22,7 @@ title: Plant Catalog - CFFC
     {% for plant in plants %}
      {% if plant.layer == layer %}
     <div class="plant-card" data-name="{{ plant.name | lower }}" data-tags="{{ plant.tags | join(',') if plant.tags else '' }}">
-      <a href="/plants/{{ plant.slug }}/">
+      <a href="/{{ plant.slug }}/">
           <img src="/images/plants/{{ plant.name }}.jpg" alt="{{ plant.name }}">
         <h3>{{ plant.name }}</h3>
       </a>
