@@ -20,8 +20,8 @@ A static site catalog of plants in the community food forest, powered by Elevent
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/angelaambroz/cffc-plant-catalog
-cd cffc-plant-catalog
+git clone git@github.com:Community-Food-Forest-Collective/cffc.git
+cd cffc
 ```
 
 2. Install dependencies:
